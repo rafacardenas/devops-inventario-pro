@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Infraestructura DevOps
+
+Resources:
+
+  MiBucket:
+    Type: AWS::S3::Bucket
+
+  MiInstancia:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.small
+      ImageId: ami-0c02fb55956c7d316
+
