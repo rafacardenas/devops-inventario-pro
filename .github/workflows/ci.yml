@@ -1,0 +1,22 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [develop]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Clonar repositorio
+      uses: actions/checkout@v3
+
+    - name: Verificar archivos
+      run: ls -la
+
+    - name: Build Docker
+      run: docker build -t devops-app ./docker
+
+    - name: Simular deploy
+      run: echo "Deploy completado correctamente"
